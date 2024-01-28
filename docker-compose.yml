@@ -1,0 +1,5 @@
+services:
+  db:
+    image: aa8y/postgres-dataset:world
+    ports:
+      - "8000:5432"

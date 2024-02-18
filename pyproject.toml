@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-vanna = { extras = ["chromadb", "postgres"], version = "^0.0.37" }
+vanna = {version = ">=0.1.0", extras = ["chromadb", "postgres"]}
 # Need to pin this because a bug in poetry:
 # https://github.com/plotly/Kaleido/issues/125
 kaleido = "0.2.1"
@@ -21,5 +21,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 clean-chroma = "rm -rf .chroma"
-run-main = "python db_explorer/main.py"
+run-main-old = "python db_explorer/main.py"
+run-main = "python db_explorer/main2.py"
 clean-run = ["clean-chroma", "run-main"]
